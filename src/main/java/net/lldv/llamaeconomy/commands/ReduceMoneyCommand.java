@@ -23,8 +23,8 @@ public class ReduceMoneyCommand extends PluginCommand<LlamaEconomy> {
         setPermission(section.getString("Permission"));
         final String[] params = section.getString("Parameters").split(";");
         addCommandParameters("default", new CommandParameter[]{
-                new CommandParameter(params[0], CommandParamType.STRING, false),
-                new CommandParameter(params[1], CommandParamType.FLOAT, false)
+                CommandParameter.newType(params[0], false, CommandParamType.STRING),
+                CommandParameter.newType(params[1], false, CommandParamType.FLOAT)
         });
     }
 

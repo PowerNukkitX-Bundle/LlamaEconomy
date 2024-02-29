@@ -20,7 +20,9 @@ public class TopMoneyCommand extends PluginCommand<LlamaEconomy> {
         this.setUsage(section.getString("Usage"));
         this.setAliases(section.getStringList("Aliases").toArray(new String[]{}));
         final String param = section.getString("Parameters");
-        this.addCommandParameters("default", new CommandParameter[]{new CommandParameter(param, CommandParamType.INT, true)});
+        addCommandParameters("default", new CommandParameter[]{
+                CommandParameter.newType(param, true, CommandParamType.INT)
+        });
     }
 
     @Override

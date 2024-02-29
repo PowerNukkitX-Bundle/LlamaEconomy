@@ -19,7 +19,9 @@ public class MoneyCommand extends PluginCommand<LlamaEconomy> {
         setUsage(section.getString("Usage"));
         setAliases(section.getStringList("Aliases").toArray(new String[]{}));
         final String param = section.getString("Parameters");
-        addCommandParameters("default", new CommandParameter[]{new CommandParameter(param, CommandParamType.STRING, true)});
+        addCommandParameters("default", new CommandParameter[]{
+                CommandParameter.newType(param, true, CommandParamType.STRING)
+        });
     }
 
     @Override
