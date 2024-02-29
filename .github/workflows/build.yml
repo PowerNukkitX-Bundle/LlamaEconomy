@@ -45,5 +45,5 @@ jobs:
         uses: actions/upload-artifact@v3
         if: success()
         with:
-          name: ${{ steps.info.outputs.artifact_name }}
+          name: ${{ steps.info.outputs.x_project_artifactId }}
           path: target/${{ steps.info.outputs.x_project_artifactId }}-${{ steps.info.outputs.project_version }}.jar
