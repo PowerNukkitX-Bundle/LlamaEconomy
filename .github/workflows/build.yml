@@ -46,4 +46,4 @@ jobs:
         if: success()
         with:
           name: ${{ steps.info.outputs.artifact_name }}
-          path: target/${{ steps.info.outputs.artifact_name }}-${{ steps.info.outputs.project_version }}.jar
+          path: target/${{ steps.info.outputs.x_project_artifactId }}-${{ steps.info.outputs.project_version }}.jar
