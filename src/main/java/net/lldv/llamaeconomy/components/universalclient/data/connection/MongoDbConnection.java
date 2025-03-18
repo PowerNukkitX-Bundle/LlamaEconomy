@@ -1,9 +1,10 @@
 package net.lldv.llamaeconomy.components.universalclient.data.connection;
 
-import com.mongodb.MongoClient;
-import com.mongodb.MongoClientURI;
 import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.internal.MongoClientImpl;
 import lombok.Getter;
 import net.lldv.llamaeconomy.components.universalclient.data.*;
 import net.lldv.llamaeconomy.components.universalclient.data.clientdetails.*;
@@ -25,9 +26,9 @@ public class MongoDbConnection extends Connection {
     private MongoDatabase database;
 
     @Override
-    public void connect(final ClientDetails details) throws Exception {
+    public void connect(final ClientDetails details) {
         final MongoDbDetails info = (MongoDbDetails) details;
-        this.client = new MongoClient(new MongoClientURI(info.getUri()));
+        this.client = MongoClients.create(info.getUri());
         this.database = this.client.getDatabase(info.getDb());
     }
 
