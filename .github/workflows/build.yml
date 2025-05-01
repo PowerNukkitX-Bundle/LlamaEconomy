@@ -1,40 +1,38 @@
-name: Build
-
 on:
   push:
-    branches: [ "master" ]
+    branches:
+      - 'master'
+    tags:
+      - 'v*'
   pull_request:
-    branches: [ "master" ]
+    branches:
+      - 'master'
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-  build:
-    permissions: write-all
+  build-gradle:
     runs-on: ubuntu-latest
-
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '21'
-          cache: maven
-      - name: Cache local Maven repository
-        uses: actions/cache@v4
-        with:
-          path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
-      - name: Read Project Info
-        id: "info"
-        uses: YunaBraska/java-info-action@main
 
-        # CONFIGS (Optional)
       - name: Build with Maven
-        run: mvn clean -B package --file pom.xml
-      - name: Upload artifact
+        run: mvn -B package -DskipTests=false -Darguments="-Dmaven.javadoc.skip=true"
+
+      - name: Upload artifacts
         uses: actions/upload-artifact@v3
         if: success()
         with:
-          name: ${{ steps.info.outputs.x_project_artifactId }}
-          path: target/${{ steps.info.outputs.x_project_artifactId }}-${{ steps.info.outputs.project_version }}.jar
+          name: LlamaEconomy
+          path: target/LlamaEconomy-1.0.0.jar
