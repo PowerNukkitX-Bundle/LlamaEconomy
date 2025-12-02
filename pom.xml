@@ -46,6 +46,12 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
+            <groupId>com.github.PowerNukkitX-Bundle</groupId>
+            <artifactId>PlaceholderAPI</artifactId>
+            <version>main-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongodb-driver-sync</artifactId>
             <version>5.4.0-alpha0</version>

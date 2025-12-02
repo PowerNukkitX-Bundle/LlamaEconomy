@@ -5,4 +5,4 @@ main: net.lldv.llamaeconomy.LlamaEconomy
 author: Proxma
 description: Easy to use economy system
 softdepend:
-  - DbLib
+  - PlaceholderAPI

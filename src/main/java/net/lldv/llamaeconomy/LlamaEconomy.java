@@ -12,6 +12,7 @@ import net.lldv.llamaeconomy.components.universalclient.data.clientdetails.*;
 import net.lldv.llamaeconomy.listener.PlayerListener;
 import net.lldv.llamaeconomy.components.api.API;
 import net.lldv.llamaeconomy.components.language.Language;
+import org.powernukkitx.placeholderapi.PlaceholderAPI;
 
 import java.text.DecimalFormat;
 
@@ -97,6 +98,10 @@ public class LlamaEconomy extends PluginBase {
         }
 
         API = new API(this, provider);
+
+        if(getServer().getPluginManager().getPlugin("PlaceholderAPI") != null) {
+            PlaceholderAPI.get().register("money", (player, params) -> String.valueOf(getAPI().getMoney(player)));
+        }
 
         this.getServer().getPluginManager().registerEvents(new PlayerListener(this), this);
         this.registerCommands(config);
