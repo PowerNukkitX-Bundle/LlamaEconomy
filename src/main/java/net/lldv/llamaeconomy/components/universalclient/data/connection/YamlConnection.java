@@ -62,6 +62,40 @@ public class YamlConnection extends Connection {
 
     @SuppressWarnings("unchecked")
     @Override
+    public void mathUpdate(String collection, String searchKey, final Object searchValue, String mathKey, double mathValue) {
+        List<Map<String, Object>> list = (List<Map<String, Object>>) getFile(collection).get("udocs");
+        if (list == null) list = new ArrayList<>();
+        List<Map<String, Object>> toUpdate = new ArrayList<>();
+        list.forEach(map -> {
+            map.forEach((key, val) -> {
+                if (key.equals(searchKey)) {
+                    if (val.equals(searchValue)) {
+                        toUpdate.add(map);
+                    }
+                }
+            });
+        });
+        toUpdate.forEach((map) -> {
+            double current = 0;
+            if (map.containsKey(mathKey)) {
+                Object obj = map.get(mathKey);
+                if (obj instanceof Number) {
+                    current = ((Number) obj).doubleValue();
+                } else if (obj instanceof String) {
+                    try {
+                        current = Double.parseDouble((String) obj);
+                    } catch (NumberFormatException ignored) {}
+                }
+            }
+            map.put(mathKey, current + mathValue);
+        });
+
+        getFile(collection).set("udocs", list);
+        getFile(collection).save();
+    }
+
+    @SuppressWarnings("unchecked")
+    @Override
     public void insert(String collection, UDocument values) {
         List<Map<String, Object>> list = (List<Map<String, Object>>) getFile(collection).get("udocs");
         if (list == null) list = new ArrayList<>();

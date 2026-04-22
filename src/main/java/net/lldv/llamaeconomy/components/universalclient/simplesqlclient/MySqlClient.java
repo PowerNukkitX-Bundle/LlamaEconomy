@@ -117,6 +117,21 @@ public class MySqlClient {
         }
     }
 
+    public void mathUpdate(String table, String searchKey, final Object searchValue, String mathKey, double mathValue) {
+        try {
+            Object valueSearch = searchValue;
+            if (valueSearch instanceof String) valueSearch = "'" + valueSearch + "'";
+
+            String statement = "UPDATE " + table + " SET " + mathKey + " = " + mathKey + " + " + mathValue + " WHERE " + searchKey + " = " + valueSearch + ";";
+
+            PreparedStatement preparedStatement = connection.prepareStatement(statement);
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+        } catch (Exception throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
     @SuppressWarnings("unchecked")
     public void insert(String table, SqlDocument values) {
         try {

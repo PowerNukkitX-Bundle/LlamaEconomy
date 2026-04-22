@@ -48,6 +48,11 @@ public class MongoDbConnection extends Connection {
     }
 
     @Override
+    public void mathUpdate(String collection, String searchKey, final Object searchValue, String mathKey, double mathValue) {
+        this.database.getCollection(collection).updateOne(new Document(searchKey, searchValue), new Document("$inc", new Document(mathKey, mathValue)));
+    }
+
+    @Override
     public void insert(String collection, UDocument values) {
         this.database.getCollection(collection).insertOne(convertTo(values));
     }

@@ -78,7 +78,7 @@ public class API {
     }
 
     public void addMoney(String username, double money) {
-        CompletableFuture.runAsync(() -> this.provider.setMoney(username, this.provider.getMoney(username) + money));
+        CompletableFuture.runAsync(() -> this.provider.addMoney(username, money));
         Server.getInstance().getPluginManager().callEvent(new AddMoneyEvent(username, money));
     }
 
@@ -92,7 +92,7 @@ public class API {
     }
 
     public void reduceMoney(String username, double money) {
-        CompletableFuture.runAsync(() -> this.provider.setMoney(username, this.provider.getMoney(username) - money));
+        CompletableFuture.runAsync(() -> this.provider.reduceMoney(username, money));
         Server.getInstance().getPluginManager().callEvent(new ReduceMoneyEvent(username, money));
     }
 

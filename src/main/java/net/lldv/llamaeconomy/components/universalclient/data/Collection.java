@@ -31,6 +31,10 @@ public class Collection {
         this.connection.update(collection, searchKey, searchValue, updates);
     }
 
+    public void mathUpdate(String searchKey, final Object searchValue, String mathKey, double mathValue) {
+        this.connection.mathUpdate(collection, searchKey, searchValue, mathKey, mathValue);
+    }
+
     public void insert(UDocument values) {
         this.connection.insert(collection, values);
     }
