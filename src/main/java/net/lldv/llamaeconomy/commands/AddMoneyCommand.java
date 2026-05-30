@@ -4,12 +4,12 @@ import cn.nukkit.Player;
 import cn.nukkit.Server;
 import cn.nukkit.command.CommandSender;
 import cn.nukkit.command.PluginCommand;
-import cn.nukkit.command.data.CommandParamType;
 import cn.nukkit.command.data.CommandParameter;
 import cn.nukkit.utils.ConfigSection;
 import net.lldv.llamaeconomy.LlamaEconomy;
 import net.lldv.llamaeconomy.components.event.PlayerAddMoneyEvent;
 import net.lldv.llamaeconomy.components.language.Language;
+import org.cloudburstmc.protocol.bedrock.data.command.CommandParamType;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -23,7 +23,7 @@ public class AddMoneyCommand extends PluginCommand<LlamaEconomy> {
         setPermission(section.getString("Permission"));
         final String[] params = section.getString("Parameters").split(";");
         addCommandParameters("default", new CommandParameter[]{
-                CommandParameter.newType(params[0], false, CommandParamType.STRING),
+                CommandParameter.newType(params[0], false, CommandParamType.ID),
                 CommandParameter.newType(params[1], false, CommandParamType.FLOAT)
         });
         /*
