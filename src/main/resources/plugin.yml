@@ -1,5 +1,5 @@
 name: LlamaEconomy
-api: 2.0.0
+api: 3.0.0
 version: "${pom.version}"
 main: net.lldv.llamaeconomy.LlamaEconomy
 author: Proxma

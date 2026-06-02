@@ -3,11 +3,11 @@ package net.lldv.llamaeconomy.commands;
 import cn.nukkit.Player;
 import cn.nukkit.command.CommandSender;
 import cn.nukkit.command.PluginCommand;
-import cn.nukkit.command.data.CommandParamType;
 import cn.nukkit.command.data.CommandParameter;
 import cn.nukkit.utils.ConfigSection;
 import net.lldv.llamaeconomy.LlamaEconomy;
 import net.lldv.llamaeconomy.components.language.Language;
+import org.cloudburstmc.protocol.bedrock.data.command.CommandParamType;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -20,7 +20,7 @@ public class MoneyCommand extends PluginCommand<LlamaEconomy> {
         setAliases(section.getStringList("Aliases").toArray(new String[]{}));
         final String param = section.getString("Parameters");
         addCommandParameters("default", new CommandParameter[]{
-                CommandParameter.newType(param, true, CommandParamType.TARGET)
+                CommandParameter.newType(param, true, CommandParamType.SELECTION)
         });
     }
 
