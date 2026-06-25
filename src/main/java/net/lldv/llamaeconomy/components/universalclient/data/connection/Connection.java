@@ -24,6 +24,9 @@ public class Connection {
     public void update(String collection, String searchKey, final Object searchValue, UDocument updates) {
     }
 
+    public void mathUpdate(String collection, String searchKey, final Object searchValue, String mathKey, double mathValue) {
+    }
+
     public void insert(String collection, UDocument values) { }
 
     public void delete(String collection, UDocument search) { }

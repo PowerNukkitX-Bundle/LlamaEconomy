@@ -22,7 +22,7 @@ public class PayCommand extends PluginCommand<LlamaEconomy> {
         setAliases(section.getStringList("Aliases").toArray(new String[]{}));
         final String[] params = section.getString("Parameters").split(";");
         addCommandParameters("default", new CommandParameter[]{
-                CommandParameter.newType(params[0], false, CommandParamType.ID),
+                CommandParameter.newType(params[0], false, CommandParamType.SELECTION),
                 CommandParameter.newType(params[1], false, CommandParamType.FLOAT)
         });
     }

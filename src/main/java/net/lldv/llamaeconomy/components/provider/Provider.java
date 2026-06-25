@@ -55,6 +55,14 @@ public class Provider {
         this.collection.update("_id", id, new UDocument("money", money));
     }
 
+    public void addMoney(String id, double money) {
+        this.collection.mathUpdate("_id", id, "money", money);
+    }
+
+    public void reduceMoney(String id, double money) {
+        this.collection.mathUpdate("_id", id, "money", -money);
+    }
+
     public Map<String, Double> getAll() {
         final Map<String, Double> map = new HashMap<>();
         this.collection.find().getAll().forEach((udoc) -> map.put(udoc.getString("_id"), udoc.getDouble("money")));

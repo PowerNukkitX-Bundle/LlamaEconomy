@@ -60,6 +60,11 @@ public class MySqlConnection extends Connection {
     }
 
     @Override
+    public void mathUpdate(String collection, String searchKey, final Object searchValue, String mathKey, double mathValue) {
+        this.client.mathUpdate(collection, searchKey, searchValue, mathKey, mathValue);
+    }
+
+    @Override
     public void insert(String collection, UDocument values) {
         this.client.insert(collection, convertTo(values));
     }
