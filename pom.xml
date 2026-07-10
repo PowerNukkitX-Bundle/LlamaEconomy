@@ -6,7 +6,7 @@
 
     <groupId>net.lldv.llamaeconomy</groupId>
     <artifactId>LlamaEconomy</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -42,13 +42,13 @@
         <dependency>
             <groupId>org.powernukkitx</groupId>
             <artifactId>server</artifactId>
-            <version>b-migration-SNAPSHOT</version>
+            <version>nightly-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.github.PowerNukkitX-Bundle</groupId>
+            <groupId>org.powernukkitx.placeholderapi</groupId>
             <artifactId>PlaceholderAPI</artifactId>
-            <version>main-SNAPSHOT</version>
+            <version>1.2.3</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

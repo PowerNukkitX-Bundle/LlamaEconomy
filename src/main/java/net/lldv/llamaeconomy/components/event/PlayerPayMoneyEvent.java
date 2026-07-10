@@ -1,8 +1,8 @@
 package net.lldv.llamaeconomy.components.event;
 
-import cn.nukkit.Player;
-import cn.nukkit.event.HandlerList;
-import cn.nukkit.event.player.PlayerEvent;
+import org.powernukkitx.Player;
+import org.powernukkitx.event.HandlerList;
+import org.powernukkitx.event.player.PlayerEvent;
 import lombok.Getter;
 
 /**

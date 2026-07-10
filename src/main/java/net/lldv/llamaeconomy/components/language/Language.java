@@ -1,6 +1,6 @@
 package net.lldv.llamaeconomy.components.language;
 
-import cn.nukkit.utils.Config;
+import org.powernukkitx.utils.Config;
 import net.lldv.llamaeconomy.LlamaEconomy;
 
 import java.util.HashMap;

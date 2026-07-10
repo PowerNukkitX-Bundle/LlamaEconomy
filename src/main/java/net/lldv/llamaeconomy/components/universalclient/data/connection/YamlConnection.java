@@ -1,6 +1,6 @@
 package net.lldv.llamaeconomy.components.universalclient.data.connection;
 
-import cn.nukkit.utils.Config;
+import org.powernukkitx.utils.Config;
 import lombok.Getter;
 import net.lldv.llamaeconomy.components.universalclient.data.*;
 import net.lldv.llamaeconomy.components.universalclient.data.clientdetails.*;

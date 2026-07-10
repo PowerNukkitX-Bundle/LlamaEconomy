@@ -1,8 +1,8 @@
 package net.lldv.llamaeconomy.listener;
 
-import cn.nukkit.event.EventHandler;
-import cn.nukkit.event.Listener;
-import cn.nukkit.event.player.PlayerJoinEvent;
+import org.powernukkitx.event.EventHandler;
+import org.powernukkitx.event.Listener;
+import org.powernukkitx.event.player.PlayerJoinEvent;
 import net.lldv.llamaeconomy.LlamaEconomy;
 
 public class PlayerListener implements Listener {

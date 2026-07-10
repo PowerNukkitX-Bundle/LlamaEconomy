@@ -1,8 +1,8 @@
 package net.lldv.llamaeconomy.commands;
 
-import cn.nukkit.command.CommandSender;
-import cn.nukkit.command.PluginCommand;
-import cn.nukkit.utils.ConfigSection;
+import org.powernukkitx.command.CommandSender;
+import org.powernukkitx.command.PluginCommand;
+import org.powernukkitx.utils.ConfigSection;
 import net.lldv.llamaeconomy.LlamaEconomy;
 import net.lldv.llamaeconomy.components.language.Language;
 

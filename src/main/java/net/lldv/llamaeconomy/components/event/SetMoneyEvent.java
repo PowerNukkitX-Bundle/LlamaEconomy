@@ -1,7 +1,7 @@
 package net.lldv.llamaeconomy.components.event;
 
-import cn.nukkit.event.Event;
-import cn.nukkit.event.HandlerList;
+import org.powernukkitx.event.Event;
+import org.powernukkitx.event.HandlerList;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 

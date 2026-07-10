@@ -1,10 +1,10 @@
 package net.lldv.llamaeconomy.commands;
 
-import cn.nukkit.Player;
-import cn.nukkit.command.CommandSender;
-import cn.nukkit.command.PluginCommand;
-import cn.nukkit.command.data.CommandParameter;
-import cn.nukkit.utils.ConfigSection;
+import org.powernukkitx.Player;
+import org.powernukkitx.command.CommandSender;
+import org.powernukkitx.command.PluginCommand;
+import org.powernukkitx.command.data.CommandParameter;
+import org.powernukkitx.utils.ConfigSection;
 import net.lldv.llamaeconomy.LlamaEconomy;
 import net.lldv.llamaeconomy.components.language.Language;
 import org.cloudburstmc.protocol.bedrock.data.command.CommandParamType;

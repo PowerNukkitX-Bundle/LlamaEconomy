@@ -1,7 +1,7 @@
 package net.lldv.llamaeconomy.components.api;
 
-import cn.nukkit.Player;
-import cn.nukkit.Server;
+import org.powernukkitx.Player;
+import org.powernukkitx.Server;
 import lombok.RequiredArgsConstructor;
 import net.lldv.llamaeconomy.LlamaEconomy;
 import net.lldv.llamaeconomy.components.event.AddMoneyEvent;

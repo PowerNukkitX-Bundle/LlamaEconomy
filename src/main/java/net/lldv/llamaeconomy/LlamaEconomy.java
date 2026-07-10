@@ -1,8 +1,8 @@
 package net.lldv.llamaeconomy;
 
-import cn.nukkit.command.CommandMap;
-import cn.nukkit.plugin.PluginBase;
-import cn.nukkit.utils.Config;
+import org.powernukkitx.command.CommandMap;
+import org.powernukkitx.plugin.PluginBase;
+import org.powernukkitx.utils.Config;
 import lombok.Getter;
 import lombok.Setter;
 import net.lldv.llamaeconomy.commands.*;
